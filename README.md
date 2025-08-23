@@ -1,4 +1,4 @@
-# InvoiceReader.AI - Extracts specific information from investment invoices
+# InvoiceReader.AI - Automate Invoice Data Extraction with Generative AI
 
 ![.NET](https://img.shields.io/badge/.NET-9.0-blue)
 ![C#](https://img.shields.io/badge/C%23-12.0-purple)
