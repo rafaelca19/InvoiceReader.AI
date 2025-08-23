@@ -98,7 +98,7 @@ The model that best suited my needs in terms of cost-effectiveness was **gpt-4o-
 
 
 ## ✅ Conclusion
-Considering I only need to read **1 invoice per month**, this project would cost me **$1 over 80 years**, assuming prices remain unchanged. Not bad for saving a few hours and some mental fatigue, right? Although this is a solution to a very specific personal problem, I hope this project can inspire and help others to build integrations with generative AI that return structured data.
+Considering I only need to read **1 invoice per month**, this project would cost me **$1 over 80 years**, assuming prices remain unchanged. Not bad for saving a few hours and some mental fatigue, right? Even though this project solves a specific personal challenge, it demonstrates how generative AI can be used to parse files and return clean, structured output—something others may find useful too.
 
 
 ## 🔄 Future Updates
