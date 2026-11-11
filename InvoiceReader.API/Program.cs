@@ -1,4 +1,5 @@
-using InvoiceReader.API.Infrastructure.Integrations.OpenAI.Client;
+using InvoiceReader.API.Core.Abstractions;
+using InvoiceReader.API.Infrastructure.Integrations.OpenAI;
 using InvoiceReader.API.Infrastructure.Integrations.OpenAI.Model;
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,7 +25,7 @@ builder.Services.AddHttpClient("OpenAI", (sp, client) =>
     client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
 
-builder.Services.AddSingleton<IOpenAIHttpClient, OpenAIHttpClient>();
+builder.Services.AddSingleton<IBrokerageNoteExtractor, OpenAIBrokerageNoteExtractor>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

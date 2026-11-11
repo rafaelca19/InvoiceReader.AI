@@ -1,13 +1,13 @@
 ﻿namespace InvoiceReader.API.Infrastructure.Integrations.OpenAI.Model;
 
-public class ResponsesApiResponse
+internal class ResponsesApiResponse
 {
     public string id { get; set; }
     public string model { get; set; }
     public Output[] output { get; set; }
 }
 
-public class Output
+internal class Output
 {
     public string type { get; set; }
     public string id { get; set; }

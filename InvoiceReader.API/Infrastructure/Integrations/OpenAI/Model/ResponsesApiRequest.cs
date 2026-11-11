@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace InvoiceReader.API.Infrastructure.Integrations.OpenAI.Model;
 
-public class ResponsesApiRequest
+internal class ResponsesApiRequest
 {
     public ResponsesApiRequest CreateSearchDocumentRequest(string base64Document, Type jsonModel, string model)
     {
@@ -19,13 +19,13 @@ public class ResponsesApiRequest
                     [
                         new DocumentContent
                         {
-                            type = "input_file",
+                            //type = "input_file",
                             filename = "invoice.pdf",
                             file_data = base64Document
                         },
                         new TextContent
                         {
-                            type = "input_text",
+                            //type = "input_text",
                             text = "Extraia as informações do PDF para JSON conforme modelo enviado"
                         },
                     ],
@@ -49,35 +49,36 @@ public class ResponsesApiRequest
     public Text text { get; set; }
 }
 
-public class Input
+internal class Input
 {
     public Content[] content { get; set; }
     public string role {get; set; }
 }
 
-public class DocumentContent : Content
+internal class DocumentContent : Content
 {
-    public string @type { get; set; }
+    //public string type { get; set; } = "input_file";
     public string filename { get; set; }
     public string file_data { get; set; }
 }
-public class TextContent : Content
+internal class TextContent : Content
 {
-    public string @type { get; set; }
+    //public string type { get; set; } = "input_text";
     public string text { get; set; }
 }
-public class Text 
+internal class Text 
 { 
     public Format format { get; set; }
 }
+
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "type")]
 [JsonDerivedType(typeof(DocumentContent), "input_file")]
 [JsonDerivedType(typeof(TextContent), "input_text")]
-public class Content
+internal abstract class Content
 {
 }
 
-public class Format
+internal class Format
 {
     public string type { get; set; }
     public object schema { get; set; }
